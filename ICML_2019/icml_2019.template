@@ -54,9 +54,7 @@
 
 % TikZ stuff
 \usepackage{tikz, adjustbox, tikz-uml}
-\usetikzlibrary{eri}
 \usetikzlibrary{positioning, shapes.symbols}
-\newcommand{\icon}[1]{\input{icons/#1}}
 
 % Colors
 \definecolor{mycolor}{gray}{0.90}
