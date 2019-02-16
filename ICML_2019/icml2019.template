@@ -1,0 +1,226 @@
+%%%%%%%% ICML 2019 EXAMPLE LATEX SUBMISSION FILE %%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+% To make the input of Swedish characters work.
+\usepackage[utf8x]{inputenc}
+
+% Recommended, but optional, packages for figures and better typesetting:
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs} % for professional tables
+
+% hyperref makes hyperlinks in the resulting PDF.
+% If your build breaks (sometimes temporarily if a hyperlink spans a page)
+% please comment out the following usepackage line and replace
+% \usepackage{icml2019} with \usepackage[nohyperref]{icml2019} above.
+\usepackage{hyperref}
+
+\newcommand{\passthrough}[1]{#1}
+\usepackage{MnSymbol}
+\usepackage[capitalise]{cleveref}  % Clever references to stuff.
+\usepackage{booktabs}              % Nicer tables
+\usepackage{bm}                    % Correct bold vectors
+\usepackage{siunitx}               % A better way of writing things with units
+
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}\setlength{\parindent}{0pt}}
+
+\let\tightlist\relax
+\def\tightlist{}
+
+%\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+%\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+
+% TikZ stuff
+\usepackage{tikz, adjustbox, tikz-uml}
+\usetikzlibrary{eri}
+\usetikzlibrary{positioning, shapes.symbols}
+\newcommand{\icon}[1]{\input{icons/#1}}
+
+% Colors
+\definecolor{mycolor}{gray}{0.90}
+\definecolor{mycolor2}{gray}{0.98}
+\definecolor{mycolor3}{gray}{0.5}
+
+\definecolor{EricssonBlue}{RGB}{0,130,240}
+\definecolor{EricssonRed}{RGB}{255,50,50 }
+\definecolor{EricssonOrange}{RGB}{255,140,10}
+\definecolor{EricssonYellow}{RGB}{250,210,45}
+\definecolor{EricssonGreen}{RGB}{15,195,115}
+\definecolor{EricssonPurple}{RGB}{175,120,210}
+\definecolor{EricssonGray5}{RGB}{242,242,242}
+\definecolor{EricssonBlack}{RGB}{24,24,24}
+
+\usepackage{lipsum}
+\usepackage{listings}
+
+\lstset{ %
+  float,
+  basicstyle=\footnotesize\ttfamily,
+  belowcaptionskip = \baselineskip,
+  breakatwhitespace=true,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rhookswarrow}},
+  postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rcurvearrowse\space}},
+  frame=tb,                    % adds a frame around the code
+  framesep=5pt,
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{black}, % the style that is used for the line-numbers
+  rulecolor=\color{mycolor},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=true,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  numberstyle=\tiny\color{gray},
+    keywordstyle=\bfseries\color{blue},
+    keywordstyle={[2]\color{green}},
+    keywordstyle={[3]\color{red}},
+keywords=[3]{@},
+commentstyle=\color{ForestGreen},
+stringstyle=\color{mycolor3},
+  %xrightmargin=-2cm,
+  %xleftmargin=-1cm,
+  backgroundcolor=\color{mycolor2}   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+}
+
+% Typesetting algorithms
+\usepackage{algorithm}
+\usepackage{algpseudocode}         % https://en.wikibooks.org/wiki/LaTeX/Algorithms#Typesetting_using_the_algorithmic_package
+
+$if(draft)$
+  \usepackage{draftwatermark}        % Draws a draft watermark :)
+  \SetWatermarkText{DRAFT}
+  \SetWatermarkScale{2}
+  \SetWatermarkColor[gray]{.95}
+$endif$
+
+% Attempt to make hyperref and algorithmic work together better:
+%\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+$if(final)$
+    % If accepted, instead use the following line for the camera-ready submission:
+    \usepackage[accepted]{icml2019}
+$else$
+    % Use the following line for the initial blind version submitted for review:
+    \usepackage{icml2019}
+$endif$
+
+% The \icmltitle you define below is probably too long as a header.
+% Therefore, a short form for the running title is supplied here:
+
+$if(title-running)$
+    \icmltitlerunning{$title.running$}
+$else$
+    \icmltitlerunning{$title$}
+$endif$
+
+\begin{document}
+
+\twocolumn[
+\icmltitle{$title$}
+
+% It is OKAY to include author information, even for blind
+% submissions: the style file will automatically remove it for you
+% unless you've provided the [accepted] option to the icml2019
+% package.
+
+% List of affiliations: The first argument should be a (short)
+% identifier you will use later to specify author affiliations
+% Academic affiliations should list Department, University, City, Region, Country
+% Industry affiliations should list Company, City, Region, Country
+
+% You can specify symbols, otherwise they are numbered in order.
+% Ideally, you should not use this facility. Affiliations will be numbered
+% in order of appearance and this is the preferred way.
+\icmlsetsymbol{equal}{*}
+
+\begin{icmlauthorlist}
+$for(author)$
+    \icmlauthor{$author.name$}{$author.affiliation.label$}
+$endfor$
+\end{icmlauthorlist}
+
+$if(affiliations)$
+    $for(affiliations)$
+        \icmlaffiliation{$affiliations.label$}{$affilliations.text$}
+    $endfor$
+$else$
+    % Some default ones
+    \icmlaffiliation{ericsson}{Machine Intelligence and Automation, Ericsson Research, Stockholm, Sweden}
+    \icmlaffiliation{kth}{KTH Royal Institute of Technology, Stockholm, Sweden}
+    \icmlaffiliation{risesics}{Research Institutes of Sweden (RISE) AI, Stockholm Sweden}
+$endif$
+
+\icmlcorrespondingauthor{Cieua Vvvvv}{c.vvvvv@googol.com}
+\icmlcorrespondingauthor{Eee Pppp}{ep@eden.co.uk}
+
+% You may provide any keywords that you
+% find helpful for describing your paper; these are used to populate
+% the "keywords" metadata in the PDF but will not be shown in the document
+\icmlkeywords{$keywords$}
+
+\vskip 0.3in
+]
+
+% this must go after the closing bracket ] following \twocolumn[ ...
+
+% This command actually creates the footnote in the first column
+% listing the affiliations and the copyright notice.
+% The command takes one argument, which is text to display at the start of the footnote.
+% The \icmlEqualContribution command is standard text for equal contribution.
+% Remove it (just {}) if you do not need this facility.
+
+%\printAffiliationsAndNotice{}  % leave blank if no need to mention equal contribution
+\printAffiliationsAndNotice{\icmlEqualContribution} % otherwise use the standard text.
+
+\begin{abstract}
+$abstract$
+\end{abstract}
+
+$body$
+
+$if(bibliography)$
+    \bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+    \bibliographystyle{icml2019}
+$endif$
+
+\end{document}
+
+% This document was modified from the file originally made available by
+% Pat Langley and Andrea Danyluk for ICML-2K. This version was created
+% by Iain Murray in 2018, and modified by Alexandre Bouchard in
+% 2019. Previous contributors include Dan Roy, Lise Getoor and Tobias
+% Scheffer, which was slightly modified from the 2010 version by
+% Thorsten Joachims & Johannes Fuernkranz, slightly modified from the
+% 2009 version by Kiri Wagstaff and Sam Roweis's 2008 version, which is
+% slightly modified from Prasad Tadepalli's 2007 version which is a
+% lightly changed version of the previous year's version by Andrew
+% Moore, which was in turn edited from those of Kristian Kersting and
+% Codrina Lauth. Alex Smola contributed to the algorithmic style files.
+
+% This Pandoc template version made for Ericsson/KTH/RISE AI use was modified
+% from the LaTeX template by Martin Isaksson <martin.isaksson@ericsson.com>
+% in 2018 and 2019.
