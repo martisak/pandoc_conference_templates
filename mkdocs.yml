@@ -1,5 +1,5 @@
 site_name: Pandoc conference paper templates
-pages:
+nav:
 - Home: 'index.md'
 - Templates:
-    - SSH: 'templates/ieee.md'
+    - ieee: './templates/ieee.md'
