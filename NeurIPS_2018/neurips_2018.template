@@ -28,6 +28,10 @@ $endif$
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
 
+% pandoc_conference_tempates additions
+\usepackage{lipsum}
+% end additions
+
 \title{$title$}
 
 % The \author macro works with any number of authors. There are two commands
