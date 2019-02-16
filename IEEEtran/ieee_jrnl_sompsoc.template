@@ -1,0 +1,144 @@
+\documentclass[10pt,journal,compsoc, twoside]{IEEEtran}
+
+\ifCLASSOPTIONcompsoc
+  % IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  \usepackage{cite}
+\fi
+
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb,amsthm} % For including math equations, theorems, symbols, etc
+\usepackage{array}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\ifCLASSOPTIONcompsoc
+  \usepackage[caption=false,font=footnotesize,labelfont=sf,textfont=sf]{subfig}
+\else
+  \usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+
+\usepackage{fixltx2e}
+
+\usepackage{url}
+
+\usepackage[pdfstartview=FitH]{hyperref}
+% Code blocks
+
+\usepackage{color}
+\usepackage{fancyvrb}
+
+\usepackage[framemethod=tikz]{mdframed}
+%\usepackage[listings]{tcolorbox}
+%\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1}
+
+\definecolor{mycolor}{gray}{0.90}
+\definecolor{mycolor2}{gray}{0.95}
+
+\newmdenv[nobreak=true,skipabove=0em,skipbelow=1em,innerlinewidth=0.5pt, backgroundcolor=mycolor2,roundcorner=4pt,linecolor=mycolor,innerleftmargin=6pt, innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt, frametitlebackgroundcolor=mycolor]{mybox}
+
+	\DefineShortVerb[commandchars=\\\{\}]{\|}
+	\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+	% Add ',fontsize=\small' for more characters per line
+
+	\newenvironment{Shaded}{\begin{mybox}[frametitle=\scriptsize{}Input]\scriptsize{}}{\end{mybox}}
+
+	\let\oldverb\verbatim
+	\let\endoldverb\endverbatim
+	\renewenvironment{verbatim}{\begin{mybox}[frametitle=\scriptsize{}Output]\begin{oldverb}\scriptsize{}}{\end{oldverb}\end{mybox}}
+
+
+    %\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    %\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+	\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+	\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+	\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+	\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+	\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+	\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+	\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+	\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+	\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+	\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+	\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+	\newcommand{\RegionMarkerTok}[1]{{#1}}
+	\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+	\newcommand{\NormalTok}[1]{{#1}}
+
+% Stuff
+\newenvironment{absolutelynopagebreak}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
+
+\newcommand{\ipaddress}[1]{\texttt{#1}}
+
+$if(title)$
+    \title{$title$}
+$else$
+    \title{Add a title}
+$endif$
+
+$if(author)$
+    \author{\spacedlowsmallcaps{$author$\textsuperscript{1}}}
+$endif$
+
+\date{} % An optional date to appear under the author(s)
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}\setlength{\parindent}{0pt}}
+
+
+\begin{document}
+
+\author{
+$for(author)$
+    $author.name$$sep$\and
+$endfor$
+\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem M. Shell was with the Department
+of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
+GA, 30332.\protect\\
+% note need leading \protect in front of \\ to get a newline within \thanks as
+% \\ is fragile and will error, could use \hfil\break instead.
+E-mail: see http://www.michaelshell.org/contact.html
+\IEEEcompsocthanksitem J. Doe and J. Doe are with Anonymous University.}% <-this % stops an unwanted space
+\thanks{$thanks$}
+}
+
+\markboth{$journal$}%
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Computer Society Journals}
+
+$if(abstract)$
+    \IEEEtitleabstractindextext{%
+        \begin{abstract}
+        $abstract$
+        \end{abstract}
+
+        $if(keywords)$
+            \begin{IEEEkeywords}$for(keywords)$$keywords$$sep$,$endfor$\end{IEEEkeywords}
+        $endif$
+    }
+$endif$
+
+\maketitle
+
+$body$
+
+$if(bibliography)$
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+$endif$
+
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+$endif$
+
+\end{document}
