@@ -1,0 +1,75 @@
+\documentclass{article$if(paper.a4)$, a4paper$endif$}
+
+% if you need to pass options to natbib, use, e.g.:
+%     \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading neurips_2018
+
+$if(final)$
+\usepackage[final]{neurips_2018}
+$else$
+$if(preprint)$
+\usepackage[preprint]{neurips_2018}
+$else$
+% ready for submission
+\usepackage{neurips_2018}
+$endif$
+$endif$
+% to compile a camera-ready version, add the [final] option, e.g.:
+
+% to avoid loading the natbib package, add option nonatbib:
+%     \usepackage[nonatbib]{neurips_2018}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+
+\title{$title$}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to LaTeX to determine where to break the
+% lines. Using \AND forces a line break at that point. So, if LaTeX puts 3 of 4
+% authors names on the first line, and the last on the second line, try using
+% \AND instead of \And before the third author name.
+
+\author{%
+$for(author)$
+  $author.name$\\%
+  $author.affiliation.name$\\
+  \texttt{$author.email$}\\
+  $sep$\And
+ $endfor$
+}
+
+\begin{document}
+% \nipsfinalcopy is no longer used
+
+\maketitle
+
+$if(abstract)$
+\begin{abstract}
+  $abstract$
+\end{abstract}
+$endif$
+
+$body$
+
+$if(bibliography)$
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+$endif$
+
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+$endif$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+\end{document}
