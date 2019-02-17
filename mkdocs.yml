@@ -3,6 +3,7 @@ nav:
 - Home: 'index.md'
 - Templates:
     - IEEE: 'ieee.md'
+- Getting started: 'getting_started.md'
 theme: readthedocs
 
 markdown_extensions:
