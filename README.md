@@ -1,5 +1,7 @@
 # pandoc_conference_templates
 
+[![Documentation Status](https://readthedocs.org/projects/pandoc-conference-templates/badge/?version=latest)](https://pandoc-conference-templates.readthedocs.io/en/latest/?badge=latest)
+
 Pandoc templates for conferences.
 
 ## Included
