@@ -2,7 +2,6 @@ site_name: Pandoc conference paper templates
 nav:
 - Home: 'index.md'
 - Templates:
-    - ieee: 'templates/ieee.md'
     - IEEE: 'ieee.md'
 theme: readthedocs
 

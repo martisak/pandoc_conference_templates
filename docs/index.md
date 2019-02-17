@@ -1,5 +1,5 @@
-# Welcome to MkDocs
+# Pandoc conference paper templates
 
-## Templates
+## Included templates
 
-[IEEE](templates/ieee.md)
+[IEEE](ieee.md)
