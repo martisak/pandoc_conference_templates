@@ -2,4 +2,4 @@
 
 ## Included templates
 
-[IEEE](ieee.md)
+- [IEEE Conference template](ieee.md)
