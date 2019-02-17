@@ -2,4 +2,20 @@ site_name: Pandoc conference paper templates
 nav:
 - Home: 'index.md'
 - Templates:
-    - ieee: './templates/ieee.md'
+    - ieee: 'templates/ieee.md'
+    - IEEE: 'ieee.md'
+theme: readthedocs
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - codehilite
+  - toc
+
+extra:
+  palette:
+    primary: 'red'
+    accent: 'red'
+  social:
+    - type: 'github'
+      link: 'https://github.com/martisak/pandoc_conference_templates'
