@@ -45,7 +45,7 @@ Choose from 1, 2, 3, 4, 5, 6 (1, 2, 3, 4, 5, 6) [1]: 3
 
 The document metadata is slightly different depending on the template, even though we strive to align the different templates.
 
-~~~
+```
 ---
 title: Paper template
 author:
@@ -66,7 +66,7 @@ abstract: |
   cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
   proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ---
-~~~~
+```
 
 ### Document body
 
