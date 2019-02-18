@@ -8,5 +8,9 @@ See our [getting started guide](getting_started.md).
 
 ## Included templates
 
+- NeurIPS
+- ICML
+- ACM CCS
 - [IEEE Conference template](ieee.md)
-
+- KTH Master Thesis
+- Generic article
