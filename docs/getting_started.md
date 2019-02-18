@@ -9,10 +9,10 @@
 2. Create a file `~/.cookiecutterrc` with the following content (see [User Config](https://cookiecutter.readthedocs.io/en/latest/advanced/user_config.html)). Preferrably, use your own name here.
 ```
  default_context:
-        full_name: "Audrey Roy"
-        email: "audreyr@gmail.com"
-        github_username: "audreyr"
-    cookiecutters_dir: "~/.cookiecutters/"
+    full_name: "Audrey Roy"
+    email: "audreyr@gmail.com"
+    github_username: "audreyr"
+cookiecutters_dir: "~/.cookiecutters/"
 ```
 
 ## Using `cookiecutter`
