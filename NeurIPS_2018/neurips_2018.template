@@ -30,6 +30,8 @@ $endif$
 
 % pandoc_conference_tempates additions
 % Colors
+\usepackage{graphicx}
+
 \usepackage{xcolor}
 \definecolor{mycolor}{gray}{0.90}
 \definecolor{mycolor2}{gray}{0.98}
@@ -69,6 +71,11 @@ stringstyle=\color{mycolor3},
   %xleftmargin=-1cm,
   backgroundcolor=\color{mycolor2}   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
 }
+
+\makeatletter
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatother
+
 % end additions
 
 \title{$title$}
