@@ -10,6 +10,8 @@
   \usepackage{cite}
 \fi
 
+\usepackage[numbers, sort]{natbib}
+
 %\usepackage{fontspec}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb,amsthm} % For including math equations, theorems, symbols, etc
