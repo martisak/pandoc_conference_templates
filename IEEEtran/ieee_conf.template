@@ -25,7 +25,8 @@
   \usepackage[caption=false,font=footnotesize]{subfig}
 \fi
 
-\usepackage[pdfstartview=FitH]{hyperref}
+%\usepackage[pdfstartview=FitH]{hyperref}
+\usepackage[draft]{hyperref}
 \usepackage{fixltx2e}
 \usepackage{url}
 \usepackage{balance}                % Balances the columns of the last page
