@@ -72,6 +72,8 @@ stringstyle=\color{mycolor3},
   backgroundcolor=\color{mycolor2}   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
 }
 
+\newcommand{\passthrough}[1]{#1}
+
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
