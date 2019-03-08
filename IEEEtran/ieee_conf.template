@@ -142,6 +142,7 @@ stringstyle=\color{mycolor3},
   {\par\xdef\tpd{\the\prevdepth}\egroup
    \prevdepth=\tpd}
 
+\newcommand{\passthrough}[1]{#1}
 \newcommand{\ipaddress}[1]{\texttt{#1}}
 
 \date{} % An optional date to appear under the author(s)
