@@ -54,6 +54,10 @@ stringstyle=\color{mycolor3},
 \AfterEndEnvironment{lstlisting}{\end{minipage}\par\addvspace{\topskip}}
 
 \newcommand{\passthrough}[1]{#1}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}\setlength{\parindent}{0pt}}
+
 % end additions
 
 
