@@ -45,6 +45,8 @@ stringstyle=\color{mycolor3},
 \usepackage{etoolbox}
 \BeforeBeginEnvironment{lstlisting}{\par\noindent\begin{minipage}{\linewidth}}
 \AfterEndEnvironment{lstlisting}{\end{minipage}\par\addvspace{\topskip}}
+
+\newcommand{\passthrough}[1]{#1}
 % end additions
 
 
