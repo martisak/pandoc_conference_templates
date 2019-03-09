@@ -13,7 +13,7 @@
 \usepackage[numbers, sort]{natbib}
 
 %\usepackage{fontspec}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8x]{inputenc}
 \usepackage{amsmath,amssymb,amsthm} % For including math equations, theorems, symbols, etc
 \usepackage[operators]{cryptocode}
 \usepackage{array}
