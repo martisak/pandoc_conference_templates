@@ -10,6 +10,13 @@
 \usepackage{lipsum}
 \usepackage{MnSymbol}
 \usepackage{listings}
+\usepackage{url}
+\usepackage{balance}                % Balances the columns of the last page
+\usepackage[capitalise]{cleveref}  % Clever references to stuff.
+\usepackage{booktabs}              % Nicer tables
+\usepackage{bm}                    % Correct bold vectors
+\usepackage{siunitx}               % A better way of writing things with units
+\usepackage{tikz, adjustbox, tikz-qtree}
 
 \lstset{ %
   float,
