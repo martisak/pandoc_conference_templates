@@ -1,4 +1,4 @@
-\documentclass[sigconf, anonymous]{acmart}
+\documentclass[sigconf, anonymous$if(paper.a4)$, a4paper$endif$]{acmart}
 
 % pandoc_conference_tempates additions
 % Colors
@@ -14,7 +14,7 @@
 \usepackage{balance}                % Balances the columns of the last page
 \usepackage[capitalise]{cleveref}  % Clever references to stuff.
 \usepackage{booktabs}              % Nicer tables
-\usepackage{bm}                    % Correct bold vectors
+%\usepackage{bm}                    % Correct bold vectors
 \usepackage{siunitx}               % A better way of writing things with units
 \usepackage{tikz, adjustbox, tikz-qtree}
 
