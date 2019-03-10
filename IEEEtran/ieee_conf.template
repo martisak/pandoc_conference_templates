@@ -173,21 +173,21 @@ $else$
 $endif$
 
 $if(author)$
-    \author{
-        $for(author)$
-            \IEEEauthorblockN{$author.name$}
-            \IEEEauthorblockA{
-            $for(author.affiliation)$
-                $author.affiliation.name$\\
-                $author.affiliation.department$
-                $sep$\\
-            $endfor$\\
-            $author.email$}
-            $sep$\and
-        $endfor$
-    }
-$endif$
+\author{
+\IEEEauthorblockN{
+$for(author)$
+  $author.name$$for(author.affiliation)$\IEEEauthorrefmark{$author.affiliation$}$endfor$%
+  $sep$,
+$endfor$
+}
 
+$if(affiliation)$
+$for(affiliation)$
+\IEEEauthorblockA{\IEEEauthorrefmark{$affiliation.number$}$affiliation.name$}
+$endfor$
+$endif$
+}
+$endif$
 \maketitle
 
 $if(abstract)$
