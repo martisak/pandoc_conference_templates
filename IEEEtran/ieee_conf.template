@@ -99,6 +99,10 @@ $endif$
   xleftmargin=.2cm,
   backgroundcolor=\color{mycolor2}   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
 }
+
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
+
 % end additions
 
 \newmdenv[nobreak=true,skipabove=0em,skipbelow=1em,innerlinewidth=0.5pt, backgroundcolor=mycolor2,roundcorner=4pt,linecolor=mycolor,innerleftmargin=6pt, innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt, frametitlebackgroundcolor=mycolor]{mybox}
