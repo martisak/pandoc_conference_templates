@@ -10,7 +10,10 @@
   \usepackage{cite}
 \fi
 
-\usepackage[numbers, sort]{natbib}
+$if(natbib)$
+\usepackage[$natbiboptions$]{natbib}
+\bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+$endif$
 
 %\usepackage{fontspec}
 \usepackage[utf8x]{inputenc}
