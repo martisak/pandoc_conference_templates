@@ -21,7 +21,10 @@ $endfor$
   \usepackage[nocompress]{cite}
 \else
   % normal IEEE
+  $if(natbib)$
+  $else$
   \usepackage{cite}
+  $endif$
 \fi
 
 $if(natbib)$
