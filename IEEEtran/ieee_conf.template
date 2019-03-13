@@ -47,7 +47,7 @@ $endif$
 
 %\usepackage[pdfstartview=FitH]{hyperref}
 \usepackage[draft]{hyperref}
-\usepackage{fixltx2e}
+%\usepackage{fixltx2e}
 \usepackage{url}
 \usepackage{balance}                % Balances the columns of the last page
 \usepackage[capitalise]{cleveref}  % Clever references to stuff.
