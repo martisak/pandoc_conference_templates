@@ -8,7 +8,7 @@
 \definecolor{mycolor3}{gray}{0.5}
 
 \usepackage{lipsum}
-\usepackage{MnSymbol}
+%\usepackage{MnSymbol}
 \usepackage{listings}
 \usepackage{url}
 \usepackage{balance}                % Balances the columns of the last page
