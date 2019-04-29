@@ -1,4 +1,19 @@
-\documentclass[sigconf$if(papersize)$, $papersize$paper$endif$$if(draft), $authordraft$endif$]{acmart}
+\documentclass[sigconf,
+$if(fontsize)$
+  $fontsize$,
+$endif$
+$if(draft)$
+  authordraft,
+$endif$
+$if(lang)$
+  $babel-lang$,
+$endif$
+$if(papersize)$
+  $papersize$paper,
+$endif$
+$for(classoption)$
+  $classoption$$sep$,
+$endfor$]{acmart}
 
 %%
 %% \BibTeX command to typeset BibTeX logo in the docs
