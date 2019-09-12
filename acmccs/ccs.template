@@ -1,6 +1,22 @@
-\documentclass[sigconf, anonymous$if(paper.a4)$, a4paper$endif$]{acmart}
+\documentclass[
+  sigconf,
+  $if(final)$
+  $else$
+  anonymous,
+  $endif$,
+  $if(papersize)$
+  $papersize$paper,
+  $endif$]{acmart}
 
 % pandoc_conference_tempates additions
+
+$if(draft)$
+  \usepackage{draftwatermark}        % Draws a draft watermark :)
+  \SetWatermarkText{DRAFT}
+  \SetWatermarkScale{2}
+  \SetWatermarkColor[gray]{.95}
+$endif$
+
 % Colors
 \usepackage{xcolor}
 \definecolor{mycolor}{gray}{0.90}
@@ -8,15 +24,22 @@
 \definecolor{mycolor3}{gray}{0.5}
 
 \usepackage{lipsum}
-%\usepackage{MnSymbol}
+\usepackage{MnSymbol}
 \usepackage{listings}
 \usepackage{url}
 \usepackage{balance}                % Balances the columns of the last page
 \usepackage[capitalise]{cleveref}  % Clever references to stuff.
 \usepackage{booktabs}              % Nicer tables
-%\usepackage{bm}                    % Correct bold vectors
-\usepackage{siunitx}               % A better way of writing things with units
+\usepackage{bm}                    % Correct bold vectors
+\usepackage[binary-units]{siunitx}               % A better way of writing things with units
 \usepackage{tikz, adjustbox, tikz-qtree}
+
+$if(natbib)$
+\usepackage[$natbiboptions$]{natbib}
+\bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+$else$
+\usepackage{cite}
+$endif$
 
 \lstset{ %
   float,
@@ -67,8 +90,11 @@ stringstyle=\color{mycolor3},
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
-% end additions
+$for(header-includes)$
+$header-includes$
+$endfor$
 
+% end additions
 
 \fancyhf{} % Remove fancy page headers
 $if(paper-number)$
@@ -131,7 +157,7 @@ $endif$
 
 $body$
 
-\bibliographystyle{ACM-Reference-Format}
+% \bibliographystyle{ACM-Reference-Format}
 $if(bibliography)$
 \bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
 $endif$
