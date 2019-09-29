@@ -42,6 +42,7 @@ $endif$
 \definecolor{mycolor2}{gray}{0.98}
 \definecolor{mycolor3}{gray}{0.5}
 
+\usepackage[capitalise]{cleveref}
 \usepackage{lipsum}
 \usepackage{MnSymbol}
 \usepackage{listings}
