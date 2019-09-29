@@ -73,106 +73,14 @@ $endif$
 \usepackage{xcolor}
 \usepackage{fancyvrb}
 
-\usepackage[framemethod=tikz]{mdframed}
-%\usepackage[listings]{tcolorbox}
-%\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1}
-% pandoc_conference_tempates additions
-% Colors
-\usepackage{xcolor}
-\definecolor{mycolor}{gray}{0.90}
-\definecolor{mycolor2}{gray}{0.98}
-\definecolor{mycolor3}{gray}{0.5}
-
 \usepackage{lipsum}
 \usepackage{MnSymbol}
-\usepackage{listings}
-
-\lstset{ %
-  float,
-  floatplacement=tb,
-  basicstyle=%
-    \ttfamily
-    \lst@ifdisplaystyle\scriptsize\fi,
-  belowcaptionskip = \baselineskip,
-  breakatwhitespace=true,         % sets if automatic breaks should only happen at whitespace
-  breaklines=true,                 % sets automatic line breaking
-  prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rhookswarrow}},
-  postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rcurvearrowse\space}},
-  frame=tb,                    % adds a frame around the code
-  framesep=5pt,
-  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
-  numbersep=5pt,                   % how far the line-numbers are from the code
-  numberstyle=\scriptsize\ttfamily\color{black}, % the style that is used for the line-numbers
-  %rulecolor=\color{mycolor},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-  showstringspaces=true,          % underline spaces within strings only
-  showtabs=false,                  % show tabs within strings adding particular underscores
-  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
-  tabsize=2,                       % sets default tabsize to 2 spaces
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\bfseries\color{blue},
-  keywordstyle={[2]\color{green}},
-  keywordstyle={[3]\color{red}},
-  keywords=[3]{@},
-  commentstyle=\color{ForestGreen},
-  stringstyle=\color{mycolor3},
-  captionpos=b,
-  % framexleftmargin=0pt,
-  % framexrightmargin=0pt,
-  xleftmargin=0em,
-  xrightmargin=0pt,
-  framexleftmargin=0em,
-  % xleftmargin=0pt,
-  backgroundcolor=\color{mycolor2}   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
-}
-
-\crefname{lstlisting}{listing}{listings}
-\Crefname{lstlisting}{Listing}{Listings}
 
 $for(header-includes)$
 $header-includes$
 $endfor$
 
 % end additions
-
-\newmdenv[nobreak=true,skipabove=0em,skipbelow=1em,innerlinewidth=0.5pt, backgroundcolor=mycolor2,roundcorner=4pt,linecolor=mycolor,innerleftmargin=6pt, innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt, frametitlebackgroundcolor=mycolor]{mybox}
-
-	\DefineShortVerb[commandchars=\\\{\}]{\|}
-	\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-	% Add ',fontsize=\small' for more characters per line
-
-	\newenvironment{Shaded}{\begin{mybox}[frametitle=\scriptsize{}Input]\scriptsize{}}{\end{mybox}}
-
-	\let\oldverb\verbatim
-	\let\endoldverb\endverbatim
-	\renewenvironment{verbatim}{\begin{mybox}[frametitle=\scriptsize{}Output]\begin{oldverb}\scriptsize{}}{\end{oldverb}\end{mybox}}
-
-\usepackage{etoolbox}
-\BeforeBeginEnvironment{lstlisting}{\par\noindent\begin{minipage}{\linewidth}}
-\AfterEndEnvironment{lstlisting}{\end{minipage}\par\addvspace{\topskip}}
-
-%\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-%\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
-\newcommand{\RegionMarkerTok}[1]{{#1}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
-\newcommand{\NormalTok}[1]{{#1}}
 
 % Stuff
 \newenvironment{absolutelynopagebreak}
@@ -188,15 +96,6 @@ $endfor$
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}\setlength{\parindent}{0pt}}
-
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 \begin{document}
 
