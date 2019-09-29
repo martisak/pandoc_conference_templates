@@ -57,6 +57,7 @@ $for(author)$
   $sep$\And
 $endfor$
 }
+$endif$
 
 % \author{
 %   David S.~Hippocampus\thanks{Use footnote for providing further
