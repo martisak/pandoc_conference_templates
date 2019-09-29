@@ -17,7 +17,7 @@ $if(natbib)$
 \bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
 $endif$
 
-\usepackage[capitalise]{cleveref}  % Clever references to stuff.
+
 \usepackage{siunitx}               % A better way of writing things with units
 \usepackage{tikz, adjustbox, tikz-qtree}
 \usepackage[protrusion=false]{microtype}
@@ -30,7 +30,11 @@ $endif$
 \usepackage{amsfonts}       % blackboard math symbols
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
-\usepackage{lipsum}		% Can be removed after putting your text content
+\usepackage{lipsum}		      % Can be removed after putting your text content
+\usepackage{bm}             % Correct bold vectors
+
+\usepackage[capitalise]{cleveref}  % Clever references to stuff.
+
 
 % pandoc_conference_tempates additions
 
