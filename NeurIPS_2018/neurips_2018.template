@@ -95,6 +95,10 @@ stringstyle=\color{mycolor3},
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
+$for(header-includes)$
+$header-includes$
+$endfor$
+
 % end additions
 
 \title{$title$}
