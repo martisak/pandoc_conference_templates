@@ -33,9 +33,6 @@ $endif$
 \usepackage{lipsum}		      % Can be removed after putting your text content
 \usepackage{bm}             % Correct bold vectors
 
-\usepackage[capitalise]{cleveref}  % Clever references to stuff.
-
-
 % pandoc_conference_tempates additions
 
 \newcommand{\passthrough}[1]{#1}
@@ -57,7 +54,8 @@ $endif$
 $if(author)$
 \author{
 $for(author)$
-  $author$
+  $author.name$\\
+  $author.affiliation$
   $sep$\And
 $endfor$
 }
