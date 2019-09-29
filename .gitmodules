@@ -1,0 +1,3 @@
+[submodule "arxiv-style"]
+	path = arxiv-style
+	url = https://github.com/kourgeorge/arxiv-style.git

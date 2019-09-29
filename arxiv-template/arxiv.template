@@ -1,0 +1,129 @@
+\documentclass[
+  $if(papersize)$
+  $papersize$paper,
+  $endif$]{article}
+
+\usepackage{arxiv}
+
+$if(draft)$
+  \usepackage{draftwatermark}        % Draws a draft watermark :)
+  \SetWatermarkText{DRAFT}
+  \SetWatermarkScale{2}
+  \SetWatermarkColor[gray]{.95}
+$endif$
+
+$if(natbib)$
+\usepackage[$natbiboptions$]{natbib}
+\bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+$endif$
+
+\usepackage[capitalise]{cleveref}  % Clever references to stuff.
+\usepackage{siunitx}               % A better way of writing things with units
+\usepackage{tikz, adjustbox, tikz-qtree}
+\usepackage[protrusion=false]{microtype}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}		% Can be removed after putting your text content
+
+% pandoc_conference_tempates additions
+
+\newcommand{\passthrough}[1]{#1}
+\newcommand{\ipaddress}[1]{\texttt{#1}}
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+$if(title)$
+    \title{$title$}
+$else$
+    \title{Add a title}
+$endif$
+
+%\date{September 9, 1985}	% Here you can change the date presented in the paper title
+%\date{} 					% Or removing it
+
+$if(author)$
+\author{
+$for(author)$
+  $author$
+  $sep$\And
+$endfor$
+}
+
+% \author{
+%   David S.~Hippocampus\thanks{Use footnote for providing further
+%     information about author (webpage, alternative
+%     address)---\emph{not} for acknowledging funding agencies.} \\
+%   Department of Computer Science\\
+%   Cranberry-Lemon University\\
+%   Pittsburgh, PA 15213 \\
+%   \texttt{hippo@cs.cranberry-lemon.edu} \\
+%   %% examples of more authors
+%    \And
+%  Elias D.~Striatum \\
+%   Department of Electrical Engineering\\
+%   Mount-Sheikh University\\
+%   Santa Narimana, Levand \\
+%   \texttt{stariate@ee.mount-sheikh.edu} \\
+%   %% \AND
+%   %% Coauthor \\
+%   %% Affiliation \\
+%   %% Address \\
+%   %% \texttt{email} \\
+%   %% \And
+%   %% Coauthor \\
+%   %% Affiliation \\
+%   %% Address \\
+%   %% \texttt{email} \\
+%   %% \And
+%   %% Coauthor \\
+%   %% Affiliation \\
+%   %% Address \\
+%   %% \texttt{email} \\
+% }
+
+% Uncomment to remove the date
+%\date{}
+
+% Uncomment to override  the `A preprint' in the header
+%\renewcommand{\headeright}{Technical Report}
+%\renewcommand{\undertitle}{Technical Report}
+
+\begin{document}
+\maketitle
+
+$if(abstract)$
+    \begin{abstract}
+        $abstract$
+    \end{abstract}
+$endif$
+
+
+$if(keywords)$
+  \keywords{$keywords$}
+$endif$
+
+$body$
+
+$if(bibliography)$
+\footnotesize
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+$endif$
+
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+$endif$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+\end{document}
