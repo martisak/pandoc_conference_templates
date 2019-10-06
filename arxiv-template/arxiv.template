@@ -55,7 +55,11 @@ $if(author)$
 \author{
 $for(author)$
   $author.name$\\
-  $author.affiliation$
+  $for(author.affiliation)$
+    $author.affiliation.institution$\\
+    $author.affiliation.city$\\
+  $endfor$
+  $author.email$
   $sep$\And
 $endfor$
 }
