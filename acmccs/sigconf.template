@@ -31,12 +31,6 @@ $endfor$]{acmart}
 \acmYear{$if(year)$$year$$else$2019$endif$}
 \acmDOI{$if(doi)$$doi$$else$10.1145/1122445.1122456$endif$}
 
-%%
-\usepackage{xcolor}
-\definecolor{mycolor}{gray}{0.90}
-\definecolor{mycolor2}{gray}{0.98}
-\definecolor{mycolor3}{gray}{0.5}
-
 \usepackage{lipsum}
 %\usepackage{MnSymbol}
 \usepackage{listings}
@@ -54,41 +48,6 @@ $if(natbib)$
 $else$
 \usepackage{cite}
 $endif$
-
-\lstset{ %
-  float,
-  basicstyle=\footnotesize\ttfamily,
-  belowcaptionskip = \baselineskip,
-  breakatwhitespace=true,         % sets if automatic breaks should only happen at whitespace
-  breaklines=true,                 % sets automatic line breaking
-  %prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rhookswarrow}},
-  %postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rcurvearrowse\space}},
-  frame=tb,                    % adds a frame around the code
-  framesep=5pt,
-  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
-  numbersep=5pt,                   % how far the line-numbers are from the code
-  numberstyle=\tiny\color{black}, % the style that is used for the line-numbers
-  rulecolor=\color{mycolor},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-  showstringspaces=true,          % underline spaces within strings only
-  showtabs=false,                  % show tabs within strings adding particular underscores
-  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
-  tabsize=2,                       % sets default tabsize to 2 spaces
-  numberstyle=\tiny\color{gray},
-    keywordstyle=\bfseries\color{blue},
-    keywordstyle={[2]\color{green}},
-    keywordstyle={[3]\color{red}},
-keywords=[3]{@},
-commentstyle=\color{ForestGreen},
-stringstyle=\color{mycolor3},
-  %xrightmargin=-2cm,
-  %xleftmargin=-1cm,
-  backgroundcolor=\color{mycolor2}   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
-}
-
-\usepackage{etoolbox}
-\BeforeBeginEnvironment{lstlisting}{\par\noindent\begin{minipage}{\linewidth}}
-\AfterEndEnvironment{lstlisting}{\end{minipage}\par\addvspace{\topskip}}
 
 \newcommand{\passthrough}[1]{#1}
 
@@ -125,8 +84,8 @@ $endif$
 $if(author.notemark)$
 \authornotemark[$author.notemark$]
 $endif$
-\email{$author.email$}
 \orcid{$author.orcid$}
+$for(author.affiliation)$
 \affiliation{%s
   \institution{$author.affiliation.institution$}
   \streetaddress{$author.affiliation.streetaddress$}
@@ -134,6 +93,8 @@ $endif$
   \state{$author.affiliation.state$}
   \postcode{$author.affiliation.postcode$}
 }
+$endfor$
+\email{$author.email$}
 $endfor$
 
 %%
