@@ -3,7 +3,9 @@
   $papersize$paper,
   $endif$]{article}
 
+
 \usepackage{arxiv}
+
 
 $if(draft)$
   \usepackage{draftwatermark}        % Draws a draft watermark :)
@@ -28,6 +30,7 @@ $endif$
 \usepackage{url}            % simple URL typesetting
 \usepackage{booktabs}       % professional-quality tables
 \usepackage{amsfonts}       % blackboard math symbols
+
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
 \usepackage{lipsum}		      % Can be removed after putting your text content
@@ -41,6 +44,8 @@ $endif$
 $for(header-includes)$
 $header-includes$
 $endfor$
+
+\usepackage[capitalise]{cleveref}  % Clever references to stuff.
 
 $if(title)$
     \title{$title$}
